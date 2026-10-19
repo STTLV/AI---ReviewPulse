@@ -1,0 +1,57 @@
+{
+  "nombre": "ReviewPulse-Agent / Consolidación Paso 12",
+  "naturaleza": "Metadatos verificados de evidencias históricas, no experimentos nuevos",
+  "software": {
+    "tests_verificados_usuario": {
+      "base": 49,
+      "paso8": 8,
+      "paso9": 9,
+      "total": 66
+    },
+    "app_seis_pestanas": "verificadas_con_capturas_usuario"
+  },
+  "smart_1_clasificador": {
+    "total": 125,
+    "aciertos": 45,
+    "exactitud_conjunta": 0.36,
+    "umbral_original": 0.85,
+    "cumple": false,
+    "restricciones": "Test ya observado en Fase 1 y etiquetas derivadas por agregación de segmentos"
+  },
+  "smart_2_deteccion_24h": {
+    "umbral_horas": 24,
+    "resultado": "NO_EVALUABLE",
+    "cumple": "NO_DEMOSTRADO",
+    "limitacion": "Sin verdad temporal de anomalías y medición de detección efectiva en flujo real"
+  },
+  "smart_3_entrega_24h": {
+    "umbral_horas": 24,
+    "resultado": "NO_EVALUABLE",
+    "cumple": "NO_DEMOSTRADO",
+    "limitacion": "Sin programación permanente ni envío externo; seis casos solo verifican cálculo de plazos"
+  },
+  "smart_4_alertas_falsas": {
+    "tp": 15,
+    "fp": 1,
+    "fn": 0,
+    "tn": 14,
+    "alertas_emitidas": 16,
+    "fraccion_alertas_falsas": 0.0625,
+    "umbral_original": "< 0.10",
+    "cumple_solo_escenario_controlado": true,
+    "cumplimiento_operativo": "NO_DEMOSTRADO",
+    "oraculo": "SIMULADO",
+    "casos_evaluables": 30
+  },
+  "escenarios": {
+    "total": 12,
+    "repeticiones": 5,
+    "ejecuciones": 60,
+    "fallas_esperadas": 4
+  },
+  "plazos_simulados": {
+    "casos": 6,
+    "comparaciones_esperadas": 6,
+    "validacion_operativa": false
+  }
+}

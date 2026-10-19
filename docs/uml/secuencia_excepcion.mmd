@@ -1,0 +1,51 @@
+sequenceDiagram
+    autonumber
+    actor Gerente
+    participant Entorno as Entorno (formulario/archivo/simulador)
+    participant UI as Interfaz Streamlit
+    participant Agente as AgenteReviewPulse
+    participant P as Percepción (validar_resena)
+    participant NLP as Servicio modelo local (no usado en fallo)
+    participant DB as Servicio SQLite (memoria)
+    participant D as Decisión de rechazo/duplicado
+    participant A as Acción (abstenerse/no reprocesar)
+    participant L as Servicio JSONL (registro)
+    Entorno-->>Gerente: Reseña disponible o datos erróneos
+    Gerente->>UI: Enviar entrada
+    UI->>Agente: procesar(entrada)
+    Agente->>P: validar_resena(entrada)
+    alt Texto vacío o fecha inválida
+        P-->>Agente: EntradaInvalida
+        Agente->>D: decidir rechazo de percepción
+        D-->>Agente: validación_invalida
+        Agente->>A: abstenerse / solicitar corrección
+        Agente->>L: registrar percepción, decisión y acción UTC
+        Agente-->>UI: estado=rechazada, error
+        UI-->>Gerente: Informar campo a corregir
+    else Entrada válida
+        P-->>Agente: percepción válida y semana ISO
+        Agente->>DB: obtener_reporte(semana)
+        DB-->>Agente: semana cerrada o abierta
+        alt La semana ya está cerrada
+            Agente->>D: no modificar historial cerrado
+            Agente->>A: no_modificar_historial_cerrado
+            Agente->>L: registrar decisión y acción
+            Agente-->>UI: estado=semana_cerrada
+        else Semana abierta
+            Agente->>DB: existe(id)
+            DB-->>Agente: sí o no
+            alt ID duplicado
+                Agente->>D: decidir no reprocesar
+                Agente->>A: no_reprocesar
+                Agente->>L: registrar duplicado y acción
+                Agente-->>UI: estado=duplicada
+            else Registro nuevo
+                Agente->>NLP: clasificar(texto)
+                NLP-->>Agente: predicción
+                Agente->>DB: guardar_resena(...)
+                Agente->>L: registrar acción
+                Agente-->>UI: estado=aceptada
+            end
+        end
+    end
+    Note over Entorno,DB: Las plataformas externas no participan; SQLite y JSONL son servicios locales.

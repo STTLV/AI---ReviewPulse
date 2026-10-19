@@ -1,0 +1,45 @@
+sequenceDiagram
+    autonumber
+    actor Gerente
+    participant Entorno as Entorno (reseñas de formulario/simulador)
+    participant UI as Interfaz Streamlit
+    participant Agente as AgenteReviewPulse (orquestación)
+    participant P as Percepción (validar_resena)
+    participant NLP as Modelo local (joblib/scikit-learn)
+    participant DB as Servicio SQLite (memoria)
+    participant D as Decisión (evaluar_alerta)
+    participant A as Acción (persistencia/panel)
+    participant L as Servicio JSONL (registro)
+    Note over Entorno,UI: No hay conexión en vivo a TripAdvisor/Google.
+    loop Por cada reseña de prueba ingresada
+        Gerente->>UI: Introducir texto, fecha y estrellas
+        UI->>Agente: procesar(entrada)
+        Agente->>P: validar_resena(entrada)
+        P-->>Agente: percepción normalizada / semana ISO
+        Agente->>DB: comprobar semana cerrada y duplicado
+        DB-->>Agente: no existe reporte ni ID duplicado
+        Agente->>NLP: clasificar(texto)
+        NLP-->>Agente: temas, polaridad por tema, señal negativa
+        Agente->>DB: guardar_resena(percepción, clasificación)
+        DB-->>Agente: registro confirmado
+        Agente->>L: registrar(percepción, decisión, acción)
+        Agente-->>UI: estado=aceptada y clasificación
+        UI-->>Gerente: Mostrar resultado
+    end
+    Gerente->>UI: Solicitar cierre manual de una semana ISO
+    UI->>Agente: cerrar_semana(semana)
+    Agente->>DB: datos_semana() y semanas_previas()
+    DB-->>Agente: resumen actual e historial
+    Agente->>D: evaluar_alerta(actual, historial, configuración)
+    D-->>Agente: alertar y tipos_anomalia
+    Agente->>A: guardar reporte y, si corresponde, alerta
+    A->>DB: INSERT reportes y opcional alertas
+    DB-->>A: persistido
+    Agente->>L: registrar acción y marca UTC
+    alt Se alcanza umbral de anomalía
+        Agente-->>UI: reporte con alerta visible en panel
+    else No se alcanza umbral
+        Agente-->>UI: reporte sin alerta
+    end
+    UI-->>Gerente: Ver reporte/historial
+    Note over UI,Gerente: No existe entrega por correo ni garantía automática de 24 h.

@@ -1,0 +1,43 @@
+# Entornos, datos locales y posibles secretos
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+.vscode/
+.idea/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.DS_Store
+Thumbs.db
+
+# Bases SQLite y bitácoras que pueden contener textos de huéspedes
+*.sqlite3
+*.sqlite3-*
+*.db
+*.db-*
+*.jsonl
+
+# Ejecuciones y experimentos (no subir resultados o estados sin revisión)
+salida_*/
+salida_pruebas*/
+experimentos/**/salida_*/
+
+# Backups, paquetes y material privado
+Evidencia_*.zip
+ReviewPulse_Paso*.zip
+*.log
+*_privado*
+
+# Empaquetados y otras copias que no deben comitearse
+*.zip
+*.7z
+*.rar
+*.sqlite
+*.sqlite-*
+*.bak
+.ipynb_checkpoints/

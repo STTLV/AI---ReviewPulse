@@ -1,0 +1,41 @@
+﻿id,fecha,texto,plataforma,estrellas
+SIM-01-01,2026-09-07,El personal fue muy amable y atento. La recepción fue rápida y el servicio excelente.,simulador,5
+SIM-01-02,2026-09-08,La habitación estaba perfectamente limpia y ordenada. Todo impecable.,simulador,5
+SIM-01-03,2026-09-09,"La ubicación del hotel es excelente, está muy cerca del centro.",simulador,5
+SIM-01-04,2026-09-10,"Buen precio, ofrece una relación calidad precio excepcional.",simulador,5
+SIM-01-05,2026-09-11,Me encantó el servicio del hotel y la atención fue estupenda.,simulador,5
+SIM-01-06,2026-09-12,"El equipo fue atento, nos recibieron con una sonrisa y todo funcionó bien.",simulador,5
+SIM-01-07,2026-09-13,"Las habitaciones estaban cómodas y limpias, muy agradable la estancia.",simulador,5
+SIM-01-08,2026-09-07,"La localización es magnífica, se puede caminar a todo el centro.",simulador,5
+SIM-01-09,2026-09-08,"La recepción fue eficiente y cordial, excelente trato de los empleados.",simulador,5
+SIM-01-10,2026-09-09,El hotel está bien ubicado y la relación calidad precio me gustó.,simulador,5
+SIM-02-01,2026-09-14,El personal fue muy amable y atento. La recepción fue rápida y el servicio excelente.,simulador,5
+SIM-02-02,2026-09-15,La habitación estaba perfectamente limpia y ordenada. Todo impecable.,simulador,5
+SIM-02-03,2026-09-16,"La ubicación del hotel es excelente, está muy cerca del centro.",simulador,5
+SIM-02-04,2026-09-17,"Buen precio, ofrece una relación calidad precio excepcional.",simulador,5
+SIM-02-05,2026-09-18,Me encantó el servicio del hotel y la atención fue estupenda.,simulador,5
+SIM-02-06,2026-09-19,"El equipo fue atento, nos recibieron con una sonrisa y todo funcionó bien.",simulador,5
+SIM-02-07,2026-09-20,"Las habitaciones estaban cómodas y limpias, muy agradable la estancia.",simulador,5
+SIM-02-08,2026-09-14,"La localización es magnífica, se puede caminar a todo el centro.",simulador,5
+SIM-02-09,2026-09-15,"La recepción fue eficiente y cordial, excelente trato de los empleados.",simulador,5
+SIM-02-10,2026-09-16,El hotel está bien ubicado y la relación calidad precio me gustó.,simulador,5
+SIM-03-01,2026-09-21,El personal fue muy amable y atento. La recepción fue rápida y el servicio excelente.,simulador,5
+SIM-03-02,2026-09-22,La habitación estaba perfectamente limpia y ordenada. Todo impecable.,simulador,5
+SIM-03-03,2026-09-23,"La ubicación del hotel es excelente, está muy cerca del centro.",simulador,5
+SIM-03-04,2026-09-24,"Buen precio, ofrece una relación calidad precio excepcional.",simulador,5
+SIM-03-05,2026-09-25,Me encantó el servicio del hotel y la atención fue estupenda.,simulador,5
+SIM-03-06,2026-09-26,"El equipo fue atento, nos recibieron con una sonrisa y todo funcionó bien.",simulador,5
+SIM-03-07,2026-09-27,"Las habitaciones estaban cómodas y limpias, muy agradable la estancia.",simulador,5
+SIM-03-08,2026-09-21,"La localización es magnífica, se puede caminar a todo el centro.",simulador,5
+SIM-03-09,2026-09-22,"La recepción fue eficiente y cordial, excelente trato de los empleados.",simulador,5
+SIM-03-10,2026-09-23,El hotel está bien ubicado y la relación calidad precio me gustó.,simulador,5
+SIM-04-01,2026-09-28,"El precio es excesivo, nos cobraron de más. Muy caro para lo que ofrece. No volvería.",simulador,1
+SIM-04-02,2026-09-29,"El precio es excesivo, nos cobraron de más. Muy caro para lo que ofrece. El costo fue un abuso.",simulador,1
+SIM-04-03,2026-09-30,"El precio es excesivo, nos cobraron de más. Muy caro para lo que ofrece. No lo recomiendo.",simulador,1
+SIM-04-04,2026-10-01,"El precio es excesivo, nos cobraron de más. Muy caro para lo que ofrece. Fue desagradable.",simulador,1
+SIM-04-05,2026-10-02,"El precio es excesivo, nos cobraron de más. Muy caro para lo que ofrece. Por ese dinero no merece la pena.",simulador,1
+SIM-04-06,2026-10-03,"El precio es excesivo, nos cobraron de más. Muy caro para lo que ofrece. Pésima relación calidad precio.",simulador,1
+SIM-04-07,2026-10-04,"El precio es excesivo, nos cobraron de más. Muy caro para lo que ofrece. Me siento estafado.",simulador,1
+SIM-04-08,2026-09-28,"El precio es excesivo, nos cobraron de más. Muy caro para lo que ofrece. No me gustó.",simulador,1
+SIM-04-09,2026-09-29,"El precio es excesivo, nos cobraron de más. Muy caro para lo que ofrece. Nada recomendable.",simulador,1
+SIM-04-10,2026-09-30,"El precio es excesivo, nos cobraron de más. Muy caro para lo que ofrece. Una decepción.",simulador,1

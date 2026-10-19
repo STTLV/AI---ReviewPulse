@@ -1,0 +1,18 @@
+digraph ReviewPulse {
+  rankdir=LR; bgcolor="white"; splines=ortho; fontname="DejaVu Sans";
+  node [shape=box style="rounded,filled" color="#AEC2D8" fillcolor="#F5F8FC" fontname="DejaVu Sans" fontsize=11 margin="0.12,0.10"];
+  edge [color="#3C657F" arrowsize=0.7];
+  env [label="Entorno simulado / archivo CSV\nFormulario y reseñas ficticias", fillcolor="#EBF8F6"];
+  ui [label="Interfaz Streamlit\napp.py"];
+  p [label="Percepción y validación\nsrc/percepcion.py"];
+  a [label="Orquestación del agente\nsrc/agente.py", fillcolor="#DDEBF8"];
+  nlp [label="Clasificador multiaspecto\nsrc/modelo.py + modelo joblib"];
+  mem [label="Memoria histórica SQLite\nsrc/memoria.py"];
+  dec [label="Decisión semanal\nsrc/decision.py"];
+  act [label="Acciones: guardar clasificación,\nreporte y aviso en panel\nsrc/agente.py + memoria.py"];
+  log [label="Bitácora JSONL UTC\nsrc/registro.py"];
+  reloj [label="Cierre invocable y plazos\nsrc/automatizacion.py\nsrc/tiempos.py"];
+  client [label="Gerente: observa panel", fillcolor="#EBF8F6"];
+  ext [label="Fuera de alcance actual:\nAPI TripAdvisor/Google,\ncorreo/mensajería, scheduler externo", style="rounded,dashed", fillcolor="#FFFFFF", color="#AF5361"];
+  env -> ui; ui -> a; a -> p; a -> nlp; a -> mem; mem -> dec; a -> dec; dec -> act; act -> mem; a -> log; reloj -> a; act -> ui; ui -> client; ext -> env [style=dashed color="#AF5361" arrowhead=none constraint=false];
+}
